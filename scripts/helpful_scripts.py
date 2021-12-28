@@ -5,11 +5,12 @@ LOCAL_BLOCKCHAIN_ENVIRONMENTS = [
     'ganache',
     'hardhat',
     'local-ganache',
-    'mainnet-fork'
+    'mainnet-fork',
+    'mainnet-fork-dev'
 ]
 
 
-def get_account(index = None, id = None):
+def get_account(index=None, id=None):
     if index is not None:
         return accounts[index]
     if network.show_active() in LOCAL_BLOCKCHAIN_ENVIRONMENTS:
