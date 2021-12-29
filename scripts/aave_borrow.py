@@ -37,12 +37,13 @@ def main():
         {'from': account}
     )
     borrow_txn.wait(1)
-    print('We borrowed som DAI!')
+    print('We borrowed some DAI!')
     get_borrowable_data(lending_pool, account)
+    repay_all(AMOUNT, lending_pool, account)
     print('You just deposited, borrowed, and repayed with Aave, Brownie and Chainlink!')
 
 
-def replay_all(amount, lending_pool, account):
+def repay_all(amount, lending_pool, account):
     approve_erc20(
         Web3.toWei(amount, 'ether'),
         lending_pool,

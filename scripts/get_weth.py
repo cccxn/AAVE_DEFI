@@ -15,6 +15,7 @@ def get_weth():
 
     """
     account = get_account()
+    # account = accounts[0]
     weth = interface.IWeth(config['networks'][network.show_active()]['weth-token'])
     txn = weth.deposit({'from': account, 'value': 0.1 * 10**18})
     txn.wait(1)
